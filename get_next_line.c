@@ -18,10 +18,11 @@ int		get_line(char **temp, int fd, char **line)
 	char	*tempmem;
 
 	if ((str = ft_strchr(temp[fd], '\n'))) ///str points to the first occurance of \n
-	{ 
-		tempmem = temp[fd]; 
+	{
+		tempmem = temp[fd];
 		*str = '\0'; // setting str to null to start from beginning
-		*line = ft_strdup(temp[fd]); // duplicating brandon into first element of array of line
+        *line = ft_strndup(temp[fd], str - temp[fd]);
+		//*line = ft_strdup(temp[fd]); // duplicating brandon into first element of array of line
 		temp[fd] = ft_strdup(str + 1);
 		free(tempmem);
 		return (1);
@@ -66,15 +67,4 @@ int		get_next_line(const int fd, char **line)
 	if (get_line(&temp[fd], fd, line) == 1)
 		return (1);
 	return (0);
-}
-#include <stdio.h>
-int main()
-{
-  int fd;
-  char *line = NULL;
-
-  fd = open("file.txt", O_RDONLY);
-  while (get_next_line(fd, &line))
-    printf("%s\n", line);
-  return (0);
 }
