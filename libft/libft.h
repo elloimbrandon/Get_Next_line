@@ -6,7 +6,7 @@
 /*   By: brfeltz <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 18:17:18 by brfeltz           #+#    #+#             */
-/*   Updated: 2019/03/16 14:05:57 by brfeltz          ###   ########.fr       */
+/*   Updated: 2019/03/27 20:39:18 by brfeltz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char			*ft_itoa(int n);
 char			*ft_strnew(size_t size);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strncat(char *dest, char const *src, size_t nb);
-char	        *ft_strndup(const char *src, size_t n);
+char			*ft_strndup(const char *src, size_t n);
 char			*ft_strchr(const char *s, int n);
 char			*ft_strrchr(const char *s, int n);
 char			*ft_strcpy(char *dest, const char *src);
