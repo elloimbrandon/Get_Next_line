@@ -6,7 +6,7 @@
 /*   By: brfeltz <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 18:17:18 by brfeltz           #+#    #+#             */
-/*   Updated: 2019/03/27 20:39:18 by brfeltz          ###   ########.fr       */
+/*   Updated: 2019/03/28 14:56:55 by brfeltz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <stdlib.h>
 # include <strings.h>
 # include <unistd.h>
+
+# define BUFF_SIZE 32
 
 typedef	struct	s_list
 {
@@ -40,6 +42,9 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
+int				ft_read(int fd, char **buffer);
+int				get_line(char **temp, int fd, char **line);
+int				get_next_line(const int fd, char **line);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcat(char *s1, const char *s2, size_t size);
 void			ft_strdel(char **as);
