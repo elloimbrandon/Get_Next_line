@@ -6,7 +6,7 @@
 /*   By: brfeltz <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/22 16:07:14 by brfeltz           #+#    #+#             */
-/*   Updated: 2019/03/25 20:24:41 by brfeltz          ###   ########.fr       */
+/*   Updated: 2019/03/26 21:28:37 by brfeltz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ int		get_line(char **temp, int fd, char **line)
 	char	*str;
 	char	*tempmem;
 
-	if ((str = ft_strchr(temp[fd], '\n')))
-	{
-		tempmem = temp[fd];
-		*str = '\0';
-		*line = ft_strdup(temp[fd]);
+	if ((str = ft_strchr(temp[fd], '\n'))) ///str points to the first occurance of \n
+	{ 
+		tempmem = temp[fd]; 
+		*str = '\0'; // setting str to null to start from beginning
+		*line = ft_strdup(temp[fd]); // duplicating brandon into first element of array of line
 		temp[fd] = ft_strdup(str + 1);
-		ft_strdel(&tempmem);
+		free(tempmem);
 		return (1);
 	}
 	else if (*temp[fd])
 	{
 		*line = ft_strdup(temp[fd]);
-		ft_strdel(&temp[fd]);
+		temp[fd] = ft_strnew(BUFF_SIZE + 1);
 		return (1);
 	}
 	return (0);
@@ -57,15 +57,16 @@ int		ft_read(int fd, char **buffer)
 
 int		get_next_line(const int fd, char **line)
 {
-	static	char	*buff[4864];
+	static char *temp[4864];
 
-	if (!line || fd < 0 || BUFF_SIZE < 0 || ft_read(fd, &buff[fd]))
+	if (!line || fd < 0 || BUFF_SIZE < 0)
 		return (-1);
-	if (get_line(&buff[fd], fd, line))
+	if (ft_read(fd, &temp[fd]) < 0)
+		return (-1);
+	if (get_line(&temp[fd], fd, line) == 1)
 		return (1);
 	return (0);
 }
-
 #include <stdio.h>
 int main()
 {
