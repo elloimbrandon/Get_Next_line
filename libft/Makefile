@@ -6,7 +6,7 @@
 #    By: brfeltz <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 18:00:39 by brfeltz           #+#    #+#              #
-#    Updated: 2019/03/28 14:51:01 by brfeltz          ###   ########.fr        #
+#    Updated: 2019/04/08 16:39:03 by brfeltz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ ft_memalloc.c ft_memmove.c ft_putnbr.c ft_strclr.c ft_striter.c ft_strmapi.c ft_
 ft_memccpy.c ft_memset.c ft_putnbr_fd.c ft_strcmp.c ft_striteri.c ft_strncat.c ft_max.c \
 ft_toupper.c ft_isspace.c ft_strchr.c ft_strjoin.c ft_strrchr.c ft_strtrim.c ft_do_op.c ft_printbits.c \
 ft_strsplit.c ft_lstnew.c ft_lstdel.c ft_lstdelone.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_strndup.c \
-ft_read.c get_line.c get_next_line.c \
 
 OBJS = ft_isascii.o ft_memchr.o ft_putchar.o ft_putstr.o ft_strcpy.o ft_strncmp.o \
 ft_isdigit.o ft_memcmp.o ft_putchar_fd.o ft_putstr_fd.o ft_strdel.o ft_strlcat.o ft_strncpy.o ft_strstr.o ft_atoi.o \
@@ -34,7 +33,6 @@ ft_memalloc.o ft_memmove.o ft_putnbr.o ft_strclr.o ft_striter.o ft_strmapi.o ft_
 ft_memccpy.o ft_memset.o ft_putnbr_fd.o ft_strcmp.o ft_striteri.o ft_strncat.o ft_do_op.o \
 ft_toupper.o ft_isspace.o ft_strchr.o ft_strjoin.o ft_strrchr.o ft_strtrim.o ft_max.o \
 ft_strsplit.o ft_lstnew.o ft_lstdel.o ft_lstdelone.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_strndup.o \
-ft_read.o get_line.o get_next_line.o \
 
 all: $(NAME)
 
