@@ -6,7 +6,7 @@
 /*   By: brfeltz <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/22 16:07:14 by brfeltz           #+#    #+#             */
-/*   Updated: 2019/03/26 21:28:37 by brfeltz          ###   ########.fr       */
+/*   Updated: 2019/04/16 14:54:18 by brfeltz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ int		get_line(char **temp, int fd, char **line)
 	char	*str;
 	char	*tempmem;
 
-	if ((str = ft_strchr(temp[fd], '\n'))) ///str points to the first occurance of \n
+	if ((str = ft_strchr(temp[fd], '\n')))
 	{
 		tempmem = temp[fd];
-		*str = '\0'; // setting str to null to start from beginning
+		*str = '\0';
         *line = ft_strndup(temp[fd], str - temp[fd]);
-		//*line = ft_strdup(temp[fd]); // duplicating brandon into first element of array of line
 		temp[fd] = ft_strdup(str + 1);
 		free(tempmem);
 		return (1);
